@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>箭头函数</title>
+</head>
+<body>
+<script>
+	const numbers = [1,2,3,4,5,3,2,1];
+	const double = numbers.map(function(number){
+		return number*2;
+	})
+
+	// const arrDouble = numbers.map((number,i)=>{
+	// 	return `${i}是：${number * 2}`; 
+	// })
+	const arrDouble = numbers.map((number,i)=>`${i}是：${number * 2}`);
+
+	const trial = numbers.map(()=>'hello');
+	console.log(arrDouble);
+</script>
+</body>
+</html>

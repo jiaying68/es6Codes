@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>获取按钮的点击次数</title>
+</head>
+<body>
+	<button>apple</button>
+	<button>pear</button>
+	<button>banana</button>
+
+	<script>
+		const clickCounts = new Map();
+		const buttons = document.querySelectorAll('button');
+
+		buttons.forEach(button=>{
+			clickCounts.set(button,0)
+			button.addEventListener('click',function(){
+				const val = clickCounts.get(this);
+				clickCounts.set(this,val+1);
+				const clicked = this.innerHTML;
+				console.log(clickCounts.get(this));
+			})
+		})
+
+		console.log(clickCounts);
+	</script>
+</body>
+</html>

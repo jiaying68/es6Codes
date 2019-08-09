@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test weakmap</title>
+</head>
+<body>
+	<script>
+		let jelly = {name: 'jelly',value:23};
+		let mary = {name:'mary',value:22};
+		// const mary = [name: 'mary'];
+
+		const weak = new WeakMap();
+
+		weak.set(jelly,'jelly is the best');
+		weak.set(mary,'mary is the best');
+		//weakmap没有循环属性，没有clear方法。
+		// weak.forEach(function(key,value){
+		// 	console.log(key,value);
+		// })
+		console.log(weak);
+		//属性指向对象，并且集合中有元素会被清空后就不用的话用weakmap
+		jelly = null;
+		mary = null;
+		// console.log(weak);
+// 		return;
+// 		people.set(1,'jelly',23);
+// 		people.set(2,'mary',20);
+// 		people.set(3,'tiffny',25);
+// 		people.set({name:'abc'});
+// 		console.log(people);
+
+// 		//在集合中加元素，使用set方法
+
+// 		console.log(people.get('jelly'));//得到其中某个变量的值
+
+// 		const setSize = people.size;
+// 		console.log(setSize);
+
+// 		const checkIn = people.has('mary');
+// 		console.log(checkIn);
+
+// 		people.delete('mary');
+// 		console.log(people);
+// 		//两种循环模式
+// 		people.forEach(function(value,key,map){
+// 			console.log(value,key,map);
+// 		})
+
+// 		for(let [index,key] of people){
+// 			console.log(`第${index}人:${key}`);
+// 		}
+
+// 		const fruits = new WeakMap([['apple',0],['banana',1]]);
+// 		console.log(fruits);
+// 		console.log(fruits.has('apple'));
+// 		console.log(fruits.has('pear'));
+// //这种是可以更改的
+// 		const abc = {
+// 			name:'234234'
+// 		};
+// 		console.log(abc);
+
+		//map和set相比，主要存的是键值对。和对象相比，属性主要是任意类型的数据；对象的属性值是字符串
+	</script>
+</body>
+</html>

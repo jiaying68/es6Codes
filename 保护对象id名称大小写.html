@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>proxy trial </title>
+</head>
+<body>
+<script>
+	const safeHandler = {
+		set(target,key, value){
+			//target:{id: 2}
+			//key:ID
+			//value:5
+			const likekey = Object.keys(target).find(k=>k.toLowerCase() === key.toLowerCase());
+			if(!(key in target) && likekey){
+				throw new Error(`oops: looks like we have already have a property ${key} but with the case of ${likekey}`)
+			}
+			target[key] = value;
+		}
+	}
+	const safety = new Proxy({id:2},safeHandler);
+	safety.ID=5;
+	//在命令行试试以下代码
+	safety.codeCast = 33333;
+	console.log(safety);
+	// 再试试以下代码
+	safety.codeCast = 33333;
+	safety.CodeCast = 334343
+</script>
+</body>
+</html>

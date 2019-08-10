@@ -4,6 +4,8 @@
 	<title>箭头函数</title>
 </head>
 <body>
+
+	<button>test</button>
 <script>
 	const numbers = [1,2,3,4,5,3,2,1];
 	const double = numbers.map(function(number){
@@ -17,6 +19,42 @@
 
 	const trial = numbers.map(()=>'hello');
 	console.log(arrDouble);
+
+	//注意，以下情况不宜使用箭头函数
+	//构造函数类
+	const Person = function(name,points){
+		this.name = name;
+		this.points = points;
+	}
+	const Jelly = Person('Jelly','90');
+
+	//原型对象被改变时
+	Person.prototype.updatePoints = function(){
+		this.points++;
+		console.log(`更新后的分数是：${this.points}`);
+	}
+
+	const button = document.querySelector("button");
+	button.addEventListener('click',function(){
+		this.classList.add('in');
+		setTimeout(()=>{
+			this.classList.remove('in');
+		},1000)
+
+		// 和以下等价：
+		// setTimeout(
+		// 	function(){
+		// 		console.log('aaa');
+		// 	},
+		// 	5000
+		// );
+	})
 </script>
+
+<style type="text/css">
+	.in{
+		background-color: red;
+	}
+</style>
 </body>
 </html>

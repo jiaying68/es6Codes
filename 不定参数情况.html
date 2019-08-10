@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>es6 中参数不定的情况</title>
+</head>
+<body>
+	<script>
+		function showArguments(para,...args){
+			console.log(args);
+			console.log(args.map(arg=>para*arg));
+		}
+
+		showArguments(0.8,1,2,5,7,8);
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>es6 中新增的字符串函数</title>
+</head>
+<body>
+<script>
+	const id = '123456789';
+	let checkStart = id.startsWith('123');
+	console.log(checkStart);
+
+//位数从0开始数，查看这个地方是不是这几个字符开头
+	let checkPos = id.startsWith('234',1);
+	console.log(checkPos);
+
+	let checkEndPos = id.endsWith('78',8);//判断是不是在第八位上以78结束
+	console.log(checkEndPos);
+
+	let isIn = (id.indexOf('345')!==-1);
+
+	// 和以下代码等价
+	let es6isIn = id.includes('234');
+	console.log('判断是否在这个字符串里：'+es6isIn);
+
+	let checkBack = id.includes('789',5);
+	console.log('第5位之后是否有字符串：'+checkBack);
+
+	//让字符串重复n次
+	let oriText = 'haha';
+	let newText = oriText.repeat(5);
+	console.log(newText);
+
+	//利用字符串重复，写右对齐函数
+	function rightAlign(string,length = 25){
+		return `${' '.repeat(length-string.length)}${string}`;
+	}
+
+	console.log(rightAlign('I love javascript'));
+	console.log(rightAlign('I love shenzhen'));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组解构</title>
+</head>
+<body>
+	<script>
+		const trialArr = [1,2,,3];
+		// const [a,b,c,d='let me give you'] = trialArr;//可以预先定义好默认值
+		const [a,b,c,d] = trialArr;
+		console.log(`${a},${b},${c},${d}`);
+
+		//交换数组中两个变量的值
+		let [m,n] = [11,23];
+		[n,m] = [m,n];
+		console.log(`${m},${n}`)
+	</script>
+
+</body>
+</html>

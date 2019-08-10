@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>get Amount</title>
+</head>
+<body>
+	<ul>
+		<li>Lorem ipsum dolor sit amet</li>
+		<li>consectetur adipisicing elit</li>
+		<li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+	</ul>
+	<script>
+		//计算加法
+		let sum = 0;
+		function getAmount(){
+			for(let item of arguments){
+				sum+=item;
+			}
+			console.log(sum);
+		}
+
+		getAmount(1,2,3,4,5,89);
+
+		//循环数组，并可以得到数组位数
+		const fruits = ['apple','banana','pear','peach'];
+		//如果不加entries()，就是把每个循环的变量拆开，只取之前'参数位'的值为循环变量
+		for(let [index,fruit] of fruits.entries()){
+			console.log(`${fruit} ranks ${index} of my favoriate fruits`);
+		}
+		//循环字符串
+		const myStr = 'ILoveCoding';
+		for(let str of myStr){
+			console.log(str);
+		}
+
+
+		//为dom元素添加类别
+		const lis = document.querySelectorAll('li');
+		for(let li of lis){
+			li.addEventListener('click',function(){
+				this.classList.toggle('clicked');
+			})
+		}
+
+		// 操作dom元素
+	</script>
+	<style type="text/css">
+		.clicked{
+			text-decoration:line-through;
+		}
+
+		li{
+			cursor: pointer;
+		}
+	</style>
+</body>
+</html>

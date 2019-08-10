@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>es6对象解构</title>
+</head>
+<body>
+	<div class="container"></div>
+<script>
+	const Tom = {
+		name:'Tom Jones',
+		age:25,
+		family:{
+			mother:'Norah Jones',
+			father:'Richard Jones',
+			brother:'Howard Jones'
+		},
+	}
+	let {name,age} = Tom;
+
+	//提前声明的处理方法
+	let father = 'dad';
+	const {father:f,mother,brother} = Tom.family;
+	// console.log(name);
+	// console.log(age);
+	console.log(mother);
+	console.log(father);
+	console.log(f);
+	console.log(brother);
+//实际运用
+	function appendChildDiv(options = {}){
+		const {parent = 'body', width = '100px', height = '80px',backgroundColor = 'pink'} = options;
+		const div = document.createElement('div');
+		div.style.width = width;
+		div.style.height = height;
+		div.style.backgroundColor = backgroundColor;
+		document.querySelector(parent).appendChild(div);
+	}
+
+	appendChildDiv(
+	{
+		parent:'.container',
+		// width:'200px',
+		// height:'150px',
+		// backgroundColor:'yellow'
+	})
+
+	// console.log(document.body);
+</script>
+</body>
+</html>

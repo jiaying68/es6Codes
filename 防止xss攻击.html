@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>防止用户注入脚本信息</title>
+</head>
+<body>
+
+	<textarea id="inputArea"></textarea>
+	<button id="submitBtn">点击</button>
+
+	<div id="showInput"></div>
+	<script src="https://cdn.bootcss.com/dompurify/1.0.3/purify.js"></script>
+	<script>
+		//用户可以在网页输入框中嵌入恶意脚本、敏感信息，从而窃取其中的信息
+		function sanitize(strings, ...values) {
+            const dirty = strings.reduce((prev, curr, i) => `${prev}${curr}${values[i] || ''}`, '');
+            return DOMPurify.sanitize(dirty);
+        }
+
+		function getAndShow(){
+			const submitBtn = document.querySelector("button");
+		}
+
+		const user = 'Mary';
+
+		submitBtn.addEventListener('click',function(){
+			let input = document.querySelector("textarea");
+			let inputContent = input.value;
+			console.log(inputContent);
+
+			let showInput = document.querySelector("#showInput");
+			showInput.innerHTML = sanitize(
+			`
+			<h1 style="color:red;">${user}</h1>
+			<div>${inputContent}</div>
+			`);
+
+			input.value = '';
+		})
+
+
+	</script>
+</body>
+</html>

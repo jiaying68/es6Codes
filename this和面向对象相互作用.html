@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		this in 面向对象
+	</title>
+</head>
+<body>
+	<script>
+		const Jelly = {
+			name:'Jelly',
+			hobbies:['Coding','gyming','movies'],
+			printHobbies:function(){
+				let _this = this;
+				this.hobbies.map(hobbies=>{
+					console.log(`${_this.name}的爱好是${hobbies}`);
+				})
+			}
+
+			//和以下函数作用一致：
+			// 因为箭头函数的this是词法作用域，剪头函数里面的this是其父作用域下的this
+			// printHobbies:function(){
+			// 	let _this = this;
+			// 	this.hobbies.map(function(hobby){
+			// 		console.log(`${_this.name}的爱好是${hobby}`)
+			// 	})
+			// }
+		}
+
+		Jelly.printHobbies();
+	</script>
+</body>
+</html>

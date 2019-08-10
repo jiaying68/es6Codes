@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>foreach跳出循环方法</title>
+</head>
+<body>
+	<script>
+		let myArr = [1,2,3,4,5,6,7,8,9];
+		myArr.forEach(arr=>{
+			if(arr==3){
+				throw new Error('end');
+			}else{
+				console.log(arr);
+			}
+		})
+	</script>
+</body>
+</html>

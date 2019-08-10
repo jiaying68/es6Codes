@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>把非数组对象编程数组对象</title>
+</head>
+<body>
+	<ul>
+		<li>ddd</li>
+		<li>234333</li>
+		<li>99333</li>
+		<li>hehhhh</li>
+	</ul>
+	<script>
+		const lis = document.querySelectorAll('li');
+		// console.log(lis);
+		// let arrLis = array.from(lis);
+		// console.log(arrLis);
+		//以下这句，把非数组的对象转换为数组对象
+		const newLis = Array.from(lis);
+		console.log(newLis);
+		// console.log(lis);
+		const mirrorLis = newLis.map(li=>li.innerHTML);
+		console.log(mirrorLis);
+
+		// 和以下内容等价:先把前面的转成数组，再调用map方法
+		const myMirrorLis = Array.from(lis,li=>li.innerHTML);
+		console.log(myMirrorLis);
+
+
+		function add(){
+			console.log(Array.from(arguments).reduce((prev,cur)=>prev+cur,0));
+		}
+
+		add(1,45,78,5);
+
+		//把字符串转为数组
+		const myStr = 'ILoveGym';
+		const myArr = Array.from(myStr);
+		console.log(myArr);
+
+		const arr1 = Array(3);//创建一个长度为3的数组
+		const arr2 = Array(3,4);//创建一个数组中包含3,4
+
+		//array.of是创建一致的数组，如果不加of的话，在输入一个变量时会创建一个长度为n的数组
+		const NewArr1 = Array.of(3);
+		const NewArr2 = Array.of(3,4);
+		console.log(arr1);
+		console.log(NewArr1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		几种循环方法
+	</title>
+</head>
+<body>
+	<script>
+		let myArr = [1,2,3,4,5,6,7,8,9];
+		let myObj = {
+		name:'jenny',
+		age:'13',
+		school:'cityu'};
+		console.log('for循环方法');
+		// for (let i=0; i <myArr.length; i++) {
+			// 终止循环：break
+			// 跳过本次循环：continue
+			// 回到调用的函数位置：return
+		// 	console.log(myArr[i]);
+		// }
+
+		console.log('foreach循环方法');
+		// myArr.forEach(arr =>{
+			//终止循环：跳到调用本函数的位置：return 
+			//foreach无法跳出循环，可以使用try， catch抛出异常的方式
+		// 	console.log(arr);
+		// })
+		//for of 用于数组，map，instant等数据结构，但是for of不能用于对象的循环
+		console.log('for of 循环方法');
+			// 终止循环：跳到调用本函数的位置：return
+			// 终止循环：break
+			// 跳过本次循环：continue
+		// for(let arr of myArr){
+		// 	console.log(arr);
+		// }
+
+		console.log('for in 循环方法');
+		for(let item in myObj){
+			// 跳到所调用的函数：return
+			// 终止循环：break
+			// 跳过本次循环：continue
+			console.log(item);
+		}
+
+		// 对象的遍历方法：遍历对象中的值并依次存入新的数组中
+	</script>
+</body>
+</html>

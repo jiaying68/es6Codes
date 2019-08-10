@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>es6之设置初始默认值</title>
+</head>
+<body>
+	<script>
+		function setVars(a,b){
+			a = a || 5;
+			b = b || 6;
+			console.log(`a是：${a},b是${b}`);
+		}
+		setVars(3,4);
+		setVars();
+
+		// 以上函数和以下等价：
+		function set6Vars(a=5,b=6){
+			console.log(`a是：${a},b是${b}`);
+		}
+		console.log('以下是es6的运行结果');
+		set6Vars();
+		set6Vars(2,3);
+	</script>
+</body>
+</html>

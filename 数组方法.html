@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>es6 数组新方法</title>
+</head>
+<body>
+	<script>
+		let inventory = [
+			{name:'banana',quantity:3},
+			{name:'apple',quantity:10},
+			{name:'pear',quantity:12}
+		]
+
+		//找出数组中元素的所有属性
+		// const isFind = inventory.find(fruit=>{
+		// 	//这里会先遍历一遍，而不是找到了就停止了
+		// 	if(fruit.name=='banana'){
+		// 		return true;
+		// 	}
+		// 	else{
+		// 		return false;
+		// 	}
+		// });
+		//和以下代码同义
+		// const isFind = inventory.find(fruit=>{return (fruit.name==='banana')});
+
+		//和以下代码同义
+		const isFind = inventory.find(fruit=>fruit.name==='banana');
+
+		//找到数组中元素所处的序号
+		const findIndex = inventory.findIndex(fruit=>fruit.name==='pear');
+
+		console.log(isFind);
+		console.log(findIndex);
+	</script>
+</body>
+</html>

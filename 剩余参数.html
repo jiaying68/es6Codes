@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试剩余参数</title>
+</head>
+<body>
+<script>
+	const player = ['mary','female',11,22,33,44,55];
+	const [name,gender,...grades] = player;
+	// console.log(grades);
+	let total = 0;
+	for(let index in grades){
+		total+=grades[index];
+	}
+	console.log(total);
+
+	const firstGroup = [1,2,3,4];
+	let mary = 'mary';
+	const secondGroup = [2,3,4,5];
+	const totalMember = [...firstGroup,mary,...secondGroup];
+	console.log(totalMember);
+
+	const totalMember1 = [...totalMember];
+	console.log(totalMember1);
+	//使用拓展运算符修改数组的值
+	totalMember[0] = 233;
+	console.log(totalMember);
+	console.log(totalMember1);
+</script>
+</body>
+</html>

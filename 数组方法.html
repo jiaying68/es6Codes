@@ -6,11 +6,10 @@
 <body>
 	<script>
 		let inventory = [
-			{name:'banana',quantity:3},
-			{name:'apple',quantity:10},
+			{name:'banana',quantity:10},
+			{name:'apple',quantity:0},
 			{name:'pear',quantity:12}
 		]
-
 		//找出数组中元素的所有属性
 		// const isFind = inventory.find(fruit=>{
 		// 	//这里会先遍历一遍，而不是找到了就停止了
@@ -23,15 +22,39 @@
 		// });
 		//和以下代码同义
 		// const isFind = inventory.find(fruit=>{return (fruit.name==='banana')});
-
 		//和以下代码同义
 		const isFind = inventory.find(fruit=>fruit.name==='banana');
-
 		//找到数组中元素所处的序号
 		const findIndex = inventory.findIndex(fruit=>fruit.name==='pear');
 
-		console.log(isFind);
-		console.log(findIndex);
+		//找到数组中某个值为特定值的元素
+		const isIn = inventory.some(fruit=>fruit.quantity>0);
+
+		//调用return 函数，some方法中只会执行一次
+		const showSome = inventory.some(fruit=>
+			{
+				if(fruit.quantity>0){
+					return true;
+				}
+				return false
+			});
+		//判断是不是所有都大于0
+		const isAllEnough = inventory.every(fruit=>fruit.quantity>0);
+		//判断到一个不满足就不会再往下执行
+		const testEvery = inventory.every(
+			fruit=>{
+				if(fruit.inventory>0){
+					return true;
+				}
+				return false;
+			})
+
+		console.log(testEvery);
+		// console.log(isAllEnough);
+		// console.log(showSome);
+		// console.log(isIn);
+		// console.log(isFind);
+		// console.log(findIndex);
 	</script>
 </body>
 </html>
